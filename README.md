@@ -6,7 +6,7 @@ This repository serves as a "starter" repository for creating a new block.
 
 ### Get the block template
 
- 1. [Fork this repository](#fork-destination-box) into your own block
+ 1. Fork this repository into your own block
  1. Clone this repository and rename the folder
 
 
