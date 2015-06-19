@@ -8,4 +8,6 @@ class Example(Block):
     """ This is the Example block. Put a brief description here. """
 
     def process_signals(self, signals, input_id='default'):
-        pass
+        for signal in signals:
+            pass
+        self.notify_signals(signals, output_id='default')
