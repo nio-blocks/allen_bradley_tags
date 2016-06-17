@@ -6,8 +6,13 @@ This repository serves as a "starter" repository for creating a new block.
 
 ### Get the block template
 
- 1. Fork this repository into your own block
- 1. Clone this repository and rename the folder
+ 1. Clone this repository: `git clone https://github.com/nio-blocks/block_template.git --depth=1 --single-branch -b <branch_name> <new_block_name>`
+  - `<branch_name>` is either "master" or "nio2" depending on the target version for nio 
+ 2. Go into the directory: `cd <new_block_name>`
+ 3. Remove to template origin: `git remote remove origin`
+ 4. Take ownership of the initial commit: `git commit --amend --reset-author -m 'Initial Commit'`
+ 3. Add new block repo as remote: `git remote add origin [new_block_repo]`
+ 4. Push: `git push --set-upstream origin <remote_branch_name>:<local_branch_name>`
 
 
 ### Rename the appropriate files
