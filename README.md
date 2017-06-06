@@ -27,3 +27,5 @@ This repository serves as a "starter" repository for creating a new block.
 
  * **example_block.py** : This is the block code. Additional Python classes and files are definitely welcome. If the file contains a Block class, make sure the filename ends with `_block.py`. If the file represents a Base Block that is not discoverable by itself, have the filename end with `_base.py`.
  * **requirements.txt** : List out any Python dependencies this block requires. This file will be installed by pip when the block is installed. The command for installing the dependencies is `pip install -r requirements.txt`.
+ * **spec.json** : Define the specification for a block, this is the metadata which is used for block discovery.
+ * **release.json** : The release data for one or more blocks.
