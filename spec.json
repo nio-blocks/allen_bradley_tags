@@ -1,0 +1,29 @@
+{
+  "namespace/BlockName": {
+    "Version": "1.0.0",
+    "Description": "Description of the block.",
+    "Output": "Description of block output(s).",
+    "Input": "Description of block input(s).",
+    "Dependencies": [
+      "<List of required dependencies.>"
+    ],
+    "Commands": {
+      "<command1>": {
+        "description": "Required description of the command",
+        "type": "Optional type and other metadata with any key."
+      },
+      "<command2>": {
+        "description": "Required description of the command"
+      }
+    },
+    "Properties": {
+      "<property1>": {
+        "description": "Required description of the property"
+      },
+      "<property2>": {
+        "default": "Optional metadata with any key.",
+        "description": "Required description of the property"
+      }
+    }
+  }
+}
