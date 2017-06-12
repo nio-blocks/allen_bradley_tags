@@ -4,24 +4,27 @@ This repository serves as a "starter" repository for creating a new block.
 
 ## How to use
 
-### Get the block template
+### Get the Block Template
 
- 1. Clone this repository: `git clone https://github.com/nio-blocks/block_template.git --depth=1 --single-branch -b <branch_name> <new_block_name>`
-  - `<branch_name>` is either "master" or "nio2" depending on the target version for nio 
- 2. Go into the directory: `cd <new_block_name>`
- 3. Remove to template origin: `git remote remove origin`
- 4. Take ownership of the initial commit: `git commit --amend --reset-author -m 'Initial Commit'`
- 3. Add new block repo as remote: `git remote add origin [new_block_repo]`
- 4. Push: `git push --set-upstream origin <remote_branch_name>:<local_branch_name>`
+1. Using the command line, navigate to your nio project's blocks folder: `cd nio/projects/<project_name>/blocks`
+1. `git clone https://github.com/nio-blocks/block_template.git <new_block_name>`
+1. Navigate into the new block folder: `cd <new_block_name>`
 
+### Rename the Appropriate Files
 
-### Rename the appropriate files
+1. Rename `example_block.py` to whatever your block name will be.
+1. In your new block Python file, rename the `Example` class to the new block's name.
+1. Rename `test_example_block.py` to match your new block's class name.
+1. Rename `BLOCK_README.md` to `README.md` and update the documentation accordingly.
 
- 1. Rename `example_block.py` to whatever your block name will be. We like to keep `_block` at the end of filenames that contain blocks.
- 1. In your new block Python file, rename the class to the new block's name. Do **not** put `Block` in the class name - this is implied.
- 1. Rename `test_example_block.py` to match your new block's class name. Always submit accompanying unit tests in the `tests` folder.
- 1. Rename `BLOCK_README.md` to `README.md` and update the documentation accordingly.
+### Track Your New Block on GitHub
 
+1. Create a new GitHub repository, often this will have the same name as `<new_block_name>`, and copy the URL
+1. Your new block will no longer track the template: `git remote remove origin`
+1. Stage your new files: `git add -A`
+1. Take ownership: `git commit --amend --reset-author -m "Inital Commit"`
+1. Set up your block to track your remote repository: `git remote add origin <new_repo_url>`
+1. Push your work to a branch (usually `master`): `git push --set-upstream origin master`
 
 ## File Reference
 
@@ -29,3 +32,5 @@ This repository serves as a "starter" repository for creating a new block.
  * **requirements.txt** : List out any Python dependencies this block requires. This file will be installed by pip when the block is installed. The command for installing the dependencies is `pip install -r requirements.txt`.
  * **spec.json** : Define the specification for a block, this is the metadata which is used for block discovery.
  * **release.json** : The release data for one or more blocks.
+ * **tests/test_example_block.py** : Always submit accompanying unit tests in the `tests` folder.
+ * **requirements.txt** : List out any Python dependencies this block requires. This file will be installed by pip when the block is installed. The command for installing the dependencies is `pip install -r requirements.txt`.
