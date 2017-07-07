@@ -7,15 +7,15 @@ This repository serves as a "starter" repository for creating a new block.
 ### Get the Block Template
 
 1. Using the command line, navigate to your nio project's blocks folder: `cd nio/projects/<project_name>/blocks`
-1. `git clone https://github.com/nio-blocks/block_template.git <new_block_name>`
+1. `git clone --depth=1 https://github.com/nio-blocks/block_template.git <new_block_name>`
 1. Navigate into the new block folder: `cd <new_block_name>`
 
 ### Rename the Appropriate Files
 
 1. Rename `example_block.py` to whatever your block name will be.
-1. In your new block Python file, rename the `Example` class to the new block's name.
+1. In your new block Python file, rename the `Example` class to the new block's name. Avoid putting `Block` in the class name, this is implied of the filename which should end in `_block.py`
 1. Rename `test_example_block.py` to match your new block's class name.
-1. Rename `BLOCK_README.md` to `README.md` and update the documentation accordingly.
+1. Rename `BLOCK_README.md` to `README.md` (`mv BLOCK_README.md README.md`) and update the documentation accordingly.
 
 ### Track Your New Block on GitHub
 
