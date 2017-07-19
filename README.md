@@ -4,7 +4,7 @@ This repository serves as a "starter" repository for creating a new block.
 
 ## How to Use
 
-### Copy the Block Template
+### Clone the Block Template
 
 1. Using the command line, navigate into your project's `/blocks` folder: `cd nio/projects/<project_name>/blocks` (If you need to create a project directory, follow the instructions here: [First Project](https://docs.n.io/getting_started/locally.html#first-project)).
 
