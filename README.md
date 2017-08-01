@@ -8,9 +8,9 @@ When creating a new block type, this repository can be cloned to quickly set up 
 
 1. Using the command line, navigate into your project's `/blocks` folder
 
-  ```cd nio/projects/<project_name>/blocks```
+    cd nio/projects/<project_name>/blocks```
 
-    (If you need to first create a project directory, follow the instructions here: [First Project](https://docs.n.io/getting_started/locally.html#first-project)).
+  (If you need to first create a project directory, follow the instructions here: [First Project](https://docs.n.io/getting_started/locally.html#first-project)).
 
 2. Clone the block template
 
