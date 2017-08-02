@@ -1,13 +1,24 @@
 {
   "namespace/BlockName": {
-    "Version": "1.0.0",
-    "Description": "Description of the block.",
-    "Output": "Description of block output(s).",
-    "Input": "Description of block input(s).",
-    "Dependencies": [
-      "<List of required dependencies.>"
-    ],
-    "Commands": {
+    "version": "1.0.0",
+    "description": "Description of the block.",
+    "outputs": {
+      "<output1 | default>": {
+        "description": "Required description of the output",
+      },
+      "<output2>": {
+        "description": "Required description of the output"
+      }
+    },
+    "inputs": {
+      "<input1 | default>": {
+        "description": "Required description of the input",
+      },
+      "<input2>": {
+        "description": "Required description of the input"
+      }
+    },
+    "commands": {
       "<command1>": {
         "description": "Required description of the command",
         "type": "Optional type and other metadata with any key."
@@ -16,7 +27,7 @@
         "description": "Required description of the command"
       }
     },
-    "Properties": {
+    "properties": {
       "<property1>": {
         "description": "Required description of the property"
       },
