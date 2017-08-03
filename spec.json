@@ -11,20 +11,20 @@
         "description": "Required description of the property"
       }
     },
-    "outputs": {
-      "<output1 | default>": {
-        "description": "Required description of the output",
-      },
-      "<output2>": {
-        "description": "Required description of the output"
-      }
-    },
     "inputs": {
       "<input1 | default>": {
         "description": "Required description of the input",
       },
       "<input2>": {
         "description": "Required description of the input"
+      }
+    },
+    "outputs": {
+      "<output1 | default>": {
+        "description": "Required description of the output",
+      },
+      "<output2>": {
+        "description": "Required description of the output"
       }
     },
     "commands": {
