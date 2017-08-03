@@ -2,7 +2,6 @@
   "namespace/BlockName": {
     "version": "1.0.0",
     "description": "Description of the block.",
-    "dependencies": [],
     "properties": {
       "<property1>": {
         "description": "Required description of the property"
