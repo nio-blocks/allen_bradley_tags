@@ -8,7 +8,7 @@ If you need to first create a project directory, the [`project_template` (https:
 
 ### Clone the Block Template
 
-  1. From the command line, go into your project and navigate to the `/blocks` folder.
+  1. From the command line, navigate to the `/blocks` folder in your project.
 
       `cd nio/projects/<project_name>/blocks`
   2. Clone the block template. Use a meaningful name to describe the block's function.
@@ -25,10 +25,10 @@ If you need to first create a project directory, the [`project_template` (https:
         `mv example_block.py new_name_block.py`
   1. Edit this file and rename `class Example(Block)` to `class New_Name(Block)`. Note: You do not need to include `Block` in the class name since this is implied in the block name.
 
-  1. Rename `BLOCK_README.md` to `README.md` and update the contents of this file
+  1. Rename `BLOCK_README.md` to `README.md` and update the contents of this file.
 
         `mv BLOCK_README.md README.md`
-  1. In the `/tests` folder, rename `test_example_block.py` to match the class name of your new block
+  1. In the `/tests` folder, rename `test_example_block.py` to match the class name of your new block.
 
         `mv test_example_block.py new_name_block.py`
   1. Edit this file and rename `class TestExample(NIOBlockTestCase)` to `class TestNew_Name(NIOBlockTestCase)`.
@@ -37,19 +37,19 @@ If you need to first create a project directory, the [`project_template` (https:
 
   1. Create a new GitHub repository. For convenience, use the same name as `<new_block_name>`, and then copy the **Clone or download** URL.
 
-  1. Remove the tracking link to the original template repository
+  1. Remove the tracking link to the original template repository.
 
        `git remote remove origin`
-  1. Stage the new files
+  1. Stage the new files.
 
         `git add -A`
-  1. Reset ownership to yourself
+  1. Reset ownership to yourself.
 
         `git commit --amend --reset-author -m "Initial Commit"`
   1. Add tracking to the new remote repository using the URL you copied.
 
         `git remote add origin <new_repo_url>`
-  1. Push to a branch (usually `master`)
+  1. Push to a branch (usually `master`).
 
         `git push --set-upstream origin master`
 
@@ -65,4 +65,4 @@ Defines the block specifications. The metadata is used for block discovery.
 
 **release.json**<br>Contains release data for one or more blocks.
 
-**tests/test_example_block.py**<br>The `tests` folder contains a sample test file. Be sure to submit your blocks with accompanying unit tests.
+**tests/test_example_block.py**<br>The `tests` folder contains a sample test file. Be sure to submit accompanying unit tests with your blocks.
