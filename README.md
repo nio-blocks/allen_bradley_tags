@@ -62,11 +62,8 @@ If you need to first create a project directory, the [`project_template` (https:
 **requirements.txt**
 <br>Lists required Python dependencies. The file is installed by pip when the block is installed. To install the dependencies, enter `pip install -r requirements.txt`.
 
-**spec.json**<br>
-Defines the block specifications. The metadata is used for block discovery.
-
 **release.json**<br>Contains release data for one or more blocks.
 
-***spec.json**<br>Defines the specification for a block type. This is the metadata which is used for block discovery.
+**spec.json**<br>Defines the specification for a block type. This is the metadata which is used for block discovery.
 
 **tests/test_example_block.py**<br>The `tests` folder contains a sample test file. Be sure to submit accompanying unit tests with your blocks.
