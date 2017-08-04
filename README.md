@@ -23,7 +23,8 @@ If you need to first create a project directory, the [`project_template` (https:
   1. Rename `example_block.py` to the name of your new block. Note: The filename should end in `_block.py` or `_base.py`. Use `_block.py` if it is intended to be a discoverable block and `_base.py` if it is meant to have common, reusable base functionality but not be discoverable.
 
         `mv example_block.py new_name_block.py`
-  1. Edit this file and rename `class Example(Block)` to `class New_Name(Block)`. Note: You do not need to include `Block` in the class name since this is implied in the block name.
+  
+  1. Edit this file and rename `class Example(Block)` to `class New_Name(Block)`. Note: You do not need to include `Block` in the class name since this is implied in the block name.
 
   1. Rename `BLOCK_README.md` to `README.md` and update the contents of this file
 
@@ -31,7 +32,8 @@ If you need to first create a project directory, the [`project_template` (https:
   1. In the `/tests` folder, rename `test_example_block.py` to match the class name of your new block
 
         `mv test_example_block.py new_name_block.py`
-  1. Edit this file and rename `class TestExample(NIOBlockTestCase)` to `class TestNew_Name(NIOBlockTestCase)`.
+  
+  1. Edit this file and rename `class TestExample(NIOBlockTestCase)` to `class TestNew_Name(NIOBlockTestCase)`.
 
 ### Track Your New Block on GitHub
 
