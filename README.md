@@ -4,7 +4,7 @@ The Block Template is a base template used to create a new block type with the r
 
 ## How to Use
 
-If you need to first create a project directory, the [`project_template` (https://github.com/nioinnovation/project_template](https://github.com/nioinnovation/project_template) repository provides a good starting point.
+If you need to first create a project directory, the `project_template` repository at [(https://github.com/nioinnovation/project_template)](https://github.com/nioinnovation/project_template) provides a good starting point.
 
 ### Clone the Block Template
 
