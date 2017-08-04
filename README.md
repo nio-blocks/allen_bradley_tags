@@ -29,7 +29,8 @@ If you need to first create a project directory, the `project_template` reposito
   1. Rename `BLOCK_README.md` to `README.md` and update the contents of this file.
 
         `mv BLOCK_README.md README.md`
-  1. In the `/tests` folder, rename `test_example_block.py` to match the class name of your new block.
+  
+  1. In the `/tests` folder, rename `test_example_block.py` to match the class name of your new block.
 
         `mv test_example_block.py new_name_block.py`
   
