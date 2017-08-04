@@ -65,4 +65,6 @@ Defines the block specifications. The metadata is used for block discovery.
 
 **release.json**<br>Contains release data for one or more blocks.
 
+***spec.json**<br>Defines the specification for a block type. This is the metadata which is used for block discovery.
+
 **tests/test_example_block.py**<br>The `tests` folder contains a sample test file. Be sure to submit accompanying unit tests with your blocks.
