@@ -4,7 +4,7 @@ The Block Template is a base template used to create a new block type with the r
 
 ## How to Use
 
-If you need to first create a project directory, the [`project_template`](https://github.com/nioinnovation/project_template) repository provides a good starting point.
+If you need to first create a project directory, the [`project_template` (https://github.com/nioinnovation/project_template](https://github.com/nioinnovation/project_template) repository provides a good starting point.
 
 ### Clone the Block Template
 
@@ -31,7 +31,6 @@ If you need to first create a project directory, the [`project_template`](https:
   1. In the `/tests` folder, rename `test_example_block.py` to match the class name of your new block
 
         `mv test_example_block.py new_name_block.py`
-
   1. Edit this file and rename `class TestExample(NIOBlockTestCase)` to `class TestNew_Name(NIOBlockTestCase)`.
 
 ### Track Your New Block on GitHub
