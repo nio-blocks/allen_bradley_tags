@@ -39,7 +39,7 @@ If you need to first create a project directory, the `project_template` reposito
 ### Track Your New Block on GitHub
 
   1. Create a new GitHub repository. For convenience, use the same name as `<new_block_name>`.
-  1. You will be given a unique URL for your new repository. Copy this URL to your clipboard.
+  1. Copy the unique URL for your new repository to your clipboard.
   1. Remove the tracking link to the original template repository.
 
        `git remote remove origin`
