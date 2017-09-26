@@ -11,9 +11,9 @@ class TestExample(NIOBlockTestCase):
         blk = Example()
         self.configure_block(blk, {})
         blk.start()
-        blk.process_signals([Signal({"hello": "n.io"})])
+        blk.process_signals([Signal({"hello": "nio"})])
         blk.stop()
         self.assert_num_signals_notified(1)
         self.assertDictEqual(
             self.last_notified[DEFAULT_TERMINAL][0].to_dict(),
-            {"hello": "n.io"})
+            {"hello": "nio"})
