@@ -13,7 +13,7 @@
     },
     "inputs": {
       "<input1 | default>": {
-        "description": "Required description of the input",
+        "description": "Required description of the input"
       },
       "<input2>": {
         "description": "Required description of the input"
@@ -21,7 +21,7 @@
     },
     "outputs": {
       "<output1 | default>": {
-        "description": "Required description of the output",
+        "description": "Required description of the output"
       },
       "<output2>": {
         "description": "Required description of the output"
