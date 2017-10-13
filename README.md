@@ -13,7 +13,7 @@ If you need to first create a project directory, the `project_template` reposito
       `cd nio/projects/<project_name>/blocks`
   2. Clone the block template. Use a meaningful name to describe the block's function.
 
-      `git clone --depth=1 https://github.com/nio-blocks/block_template.git <new_block_name>`
+      `git submodule add https://github.com/nio-blocks/block_template.git <new_block_name>`
   2. Navigate to the new block folder.
 
       `cd <new_block_name>`
