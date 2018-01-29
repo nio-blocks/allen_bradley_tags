@@ -8,95 +8,24 @@ The block template is a base template used to create a new block type with the r
 
 If you need to first create a project directory, the `project_template` repository at <https://github.com/niolabs/project_template> provides a good starting point.
 
-### Clone the block template
+The nio-cli `newblock` command creates a custom block from this repository. This command clones the project, renames all of the example files, and sets the initial commit for your new block.
 
-  1. From the command line, navigate to the **/blocks** folder in your project.
+This command should be run from the `blocks/` directory of your nio project.
 
-      ```
-      cd nio/projects/<project_name>/blocks
-      ```
-
-  2. Clone the block template. Use a meaningful name to describe the block's function.
-
-      ```
-      git submodule add https://github.com/nio-blocks/block_template.git <new_block_name>
-      ```
-
-  2. Navigate to the new block folder.
-
-      ```
-      cd <new_block_name>
-      ```
-
-### Rename the appropriate files
-
-  1. Rename **example_block.py** to the name of your new block. Note: The filename should end in `_block.py` or `_base.py`. Use `_block.py` if it is intended to be a discoverable block and `_base.py` if it is meant to have common, reusable base functionality but not be discoverable.
-
-        ```
-        mv example_block.py new_name_block.py
-        ```
-  
-  1. Edit this file and rename **class Example(Block)** to `class New_Name(Block)`. Note: You do not need to include **Block** in the class name since this is implied in the block name.
-
-  1. Rename **BLOCK_README.md** to `README.md` and update the contents of this file.
-
-        ```
-        mv BLOCK_README.md README.md
-        ```
-  
-  1. In the **/tests** folder, rename **test_example_block.py** to match the class name of your new block.
-
-        ```
-        mv test_example_block.py new_name_block.py
-        ```
-  
-  1. Edit this file and rename **class TestExample(NIOBlockTestCase)** to `class TestNew_Name(NIOBlockTestCase)`.
-
-### Track your new block on GitHub
-
-  1. Create a new GitHub repository. For convenience, use the same name as **<new_block_name>**.
-  1. Copy the unique URL for your new repository to your clipboard.
-  1. Remove the tracking link to the original template repository.
-
-       ```
-       git remote remove origin
-       ```
-
-  1. Stage the new files.
-
-        ```
-        git add -A
-        ```
-
-  1. Reset ownership to yourself.
-
-        ```
-        git commit --amend --reset-author -m "Initial Commit"
-        ```
-
-  1. Add tracking to the new remote repository using the URL you copied.
-
-        ```
-        git remote add origin <new_repo_url>
-        ```
-
-  1. Push to a branch (usually **master**).
-
-        ```
-        git push --set-upstream origin master
-        ```
+```
+nio newblock <new_block>
+```
 
 ---
 
 ## File reference
 
-**example_block.py**<br>This is the block code. Additional Python classes and files are definitely welcome. If the file contains a block class, make sure the filename ends with `_block.py`. If the file represents a base block (a block type that is not intended to be discoverable by itself), rename the filename to end with `_base.py`.
+**<new_block>_block.py**<br>This is the block code. Additional Python classes and files are definitely welcome. If the file contains a block class, make sure the filename ends with `_block.py`. If the file represents a base block (a block type that is not intended to be discoverable by itself), rename the filename to end with `_base.py`.
 
-**requirements.txt**
-<br>Lists required Python dependencies. The file is installed by pip when the block is installed. To install the dependencies, enter `pip install -r requirements.txt`.
+**requirements.txt**<br>Lists required Python dependencies. The file is installed by pip when the block is installed. To install the dependencies, enter `pip install -r requirements.txt`.
 
 **release.json**<br>Contains release data for one or more blocks.
 
 **spec.json**<br>Defines the specification for a block type. This is the metadata which is used for block discovery.
 
-**tests/test_example_block.py**<br>The **tests** folder contains a sample test file. Be sure to submit accompanying unit tests with your blocks.
+**tests/test_<new_block>_block.py**<br>The **tests** folder contains a sample test file. Be sure to submit accompanying unit tests with your blocks.
