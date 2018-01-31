@@ -6,15 +6,22 @@ The block template is a base template used to create a new block type with the r
 
 ## How to use
 
-If you need to first create a project directory, the `project_template` repository at <https://github.com/niolabs/project_template> provides a good starting point.
-
 The nio-cli `newblock` command creates a custom block from this repository. This command clones the project, renames all of the example files, and sets the initial commit for your new block.
 
-This command should be run from the `blocks/` directory of your nio project.
+Run this command from the `blocks/` directory of your nio project.
 
-```
+```bash
 nio newblock <new_block>
 ```
+
+If you need to first create a nio project, use the nio-cli `nio-new` command
+
+```bash
+nio new <new_project>
+```
+
+For more information about your project directory, refer to the `project_template` repository at <https://github.com/niolabs/project_template> 
+
 
 ---
 
