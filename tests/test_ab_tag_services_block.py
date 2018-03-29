@@ -42,15 +42,17 @@ class TestABTagServices(NIOBlockTestCase):
 
     @patch(ABTagServices.__module__ + '.ClxDriver')
     def test_write_tag(self, mock_clx):
-        mock_clx.return_value.write_tag.return_value = ('seven', 7, 'INT')
+        tag_to_write = ('seven', 7, 'INT')
+        tag_expr = '{{ (\'seven\', 7, \'INT\') }}'
+        mock_clx.return_value.write_tag.return_value = tag_to_write
         blk = ABTagServices()
         self.configure_block(
             blk,
-            {'host': 'ip_addr', 'tags': '{{ (\'seven\', 7, \'INT\') }}', 'write': '{{ $write }}'})
+            {'host': 'ip_addr', 'tags': tag_expr, 'write': '{{ $write }}'})
         blk.start()
         blk.process_signals([Signal({'write': True})])
         blk.stop()
-        mock_clx.return_value.write_tag.assert_called_once_with(('seven', 7, 'INT'))
+        mock_clx.return_value.write_tag.assert_called_once_with(tag_to_write)
         self.assert_num_signals_notified(1)
         self.assertDictEqual(
             self.last_notified[DEFAULT_TERMINAL][0].to_dict(),
@@ -69,10 +71,11 @@ class TestABTagServices(NIOBlockTestCase):
 
     @patch(ABTagServices.__module__ + '.ClxDriver')
     def test_write_tags_one_invalid(self, mock_clx):
+        tag_expr = '{{ [\'not a tuple\', (\'seven\', 7, \'INT\')] }}'
         blk = ABTagServices()
         self.configure_block(
             blk,
-            {'host': 'ip_addr', 'tags': '{{ [\'not a tuple\', (\'seven\', 7, \'INT\')] }}', 'write': True})
+            {'host': 'ip_addr', 'tags': tag_expr, 'write': True})
         blk.start()
         with self.assertRaises(TypeError):
             blk.process_signals([Signal()])
