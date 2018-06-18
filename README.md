@@ -1,6 +1,6 @@
 ReadTag
 =======
-Read tags from an Allen-Bradley ControlLogix PLC.
+Read tags from an Allen-Bradley ControlLogix or CompactLogix PLC.
 
 Properties
 ----------
@@ -27,7 +27,7 @@ None
 
 WriteTag
 ========
-Write tags to an Allen-Bradley ControlLogix PLC.
+Write tags to an Allen-Bradley ControlLogix or CompactLogix PLC.
 
 Properties
 ----------
