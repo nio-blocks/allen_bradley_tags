@@ -1,1 +1,1 @@
--e git://github.com/bpaterni/pycomm.git@6d55f5522b9012b523db30d00f0771c129a7c9bc#egg=pycomm
+-e git://github.com/bpaterni/pycomm.git@baff34693c922e11a6c9f8ebe700621946bb30c3#egg=pycomm

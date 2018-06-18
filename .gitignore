@@ -54,3 +54,6 @@ docs/_build/
 
 # vim swap file
 *.swp
+
+# pycomm source files
+src/

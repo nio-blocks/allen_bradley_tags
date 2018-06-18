@@ -1,40 +1,80 @@
 {
-  "namespace/BlockName": {
-    "version": "1.0.0",
-    "description": "Description of the block.",
+  "nio/ReadTag": {
+    "version": "0.1.0",
+    "description": "Read tags from an Allen-Bradley ControlLogix PLC.",
+    "categories": [],
     "properties": {
-      "<property1>": {
-        "description": "Required description of the property"
+      "enrich": {
+        "title": "Signal Enrichment",
+        "type": "ObjectType",
+        "description": "Signal Enrichment\n  - *exclude_existing*: If checked (true), the attributes of the incoming signal will be excluded from the outgoing signal. If unchecked (false), the attributes of the incoming signal will be included in the outgoing signal.\n  - *enrich_field*: (hidden) The attribute on the signal to store the results from this block. If this is empty, the results will be merged onto the incoming signal. This is the default operation. Having this field allows a block to 'save' the results of an operation to a single field on an incoming signal and notify the enriched signal.",
+        "default": {
+          "enrich_field": "",
+          "exclude_existing": true
+        }
       },
-      "<property2>": {
-        "default": "Optional metadata with any key.",
-        "description": "Required description of the property"
+      "host": {
+        "title": "Host Address",
+        "type": "StringType",
+        "description": "IP address or hostname of target device.",
+        "default": null
+      },
+      "tags": {
+        "title": "Tags",
+        "type": "Type",
+        "description": "A tag (string), or list of tags, to read.",
+        "default": null
       }
     },
     "inputs": {
-      "<input1 | default>": {
-        "description": "Required description of the input"
-      },
-      "<input2>": {
-        "description": "Required description of the input"
+      "default": {
+        "description": "Any list of signals."
       }
     },
     "outputs": {
-      "<output1 | default>": {
-        "description": "Required description of the output"
-      },
-      "<output2>": {
-        "description": "Required description of the output"
+      "default": {
+        "description": "A list of signals of equal length to input.\n  * *value* (tuple): The requested value and data type as `(name, value, type)`, or a list of tuples if more than one tag was read."
       }
     },
-    "commands": {
-      "<command1>": {
-        "description": "Required description of the command",
-        "type": "Optional type and other metadata with any key."
+    "commands": {}
+  },
+  "nio/WriteTag": {
+    "version": "0.1.0",
+    "description": "Write tags to an Allen-Bradley ControlLogix PLC.",
+    "categories": [],
+    "properties": {
+      "enrich": {
+        "title": "Signal Enrichment",
+        "type": "ObjectType",
+        "description": "Signal Enrichment\n  - *exclude_existing*: If checked (true), the attributes of the incoming signal will be excluded from the outgoing signal. If unchecked (false), the attributes of the incoming signal will be included in the outgoing signal.\n  - *enrich_field*: (hidden) The attribute on the signal to store the results from this block. If this is empty, the results will be merged onto the incoming signal. This is the default operation. Having this field allows a block to 'save' the results of an operation to a single field on an incoming signal and notify the enriched signal.",
+        "default": {
+          "enrich_field": "",
+          "exclude_existing": true
+        }
       },
-      "<command2>": {
-        "description": "Required description of the command"
+      "host": {
+        "title": "Host Address",
+        "type": "StringType",
+        "description": "IP address or hostname of target device.",
+        "default": null
+      },
+      "tags": {
+        "title": "Tags",
+        "type": "Type",
+        "description": "A tuple, or list of tuples, of `(name, value, type)` to write.",
+        "default": null
       }
-    }
+    },
+    "inputs": {
+      "default": {
+        "description": "Any list of signals."
+      }
+    },
+    "outputs": {
+      "default": {
+        "description": "A list of signals of equal length to input.\n  * *success* (bool): `True` if the write operation was successful, otherwise `False`, or a list of booleans if more than one tag was written."
+      }
+    },
+    "commands": {}
   }
 }
