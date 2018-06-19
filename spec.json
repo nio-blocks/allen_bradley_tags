@@ -2,7 +2,10 @@
   "nio/ReadTag": {
     "version": "0.1.0",
     "description": "Read tags from an Allen-Bradley ControlLogix or CompactLogix PLC.",
-    "categories": [],
+    "categories": [
+      "Hardware",
+      "Communication"
+    ],
     "properties": {
       "enrich": {
         "title": "Signal Enrichment",
@@ -41,7 +44,10 @@
   "nio/WriteTag": {
     "version": "0.1.0",
     "description": "Write tags to an Allen-Bradley ControlLogix or CompactLogix PLC.",
-    "categories": [],
+    "categories": [
+      "Hardware",
+      "Communication"
+    ],
     "properties": {
       "enrich": {
         "title": "Signal Enrichment",
