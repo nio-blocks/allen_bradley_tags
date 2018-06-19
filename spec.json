@@ -42,7 +42,7 @@
     "commands": {}
   },
   "nio/WriteTag": {
-    "version": "0.1.0",
+    "version": "0.1.2",
     "description": "Write tags to an Allen-Bradley ControlLogix or CompactLogix PLC.",
     "categories": [
       "Hardware",
