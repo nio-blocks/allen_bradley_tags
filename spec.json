@@ -1,6 +1,6 @@
 {
   "nio/ReadTag": {
-    "version": "0.1.0",
+    "version": "0.1.4",
     "description": "Read tags from an Allen-Bradley ControlLogix or CompactLogix PLC.",
     "categories": [
       "Hardware",

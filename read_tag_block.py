@@ -6,7 +6,7 @@ from nio.properties import VersionProperty, StringProperty, Property
 
 class ReadTag(EnrichSignals, Block):
 
-    version = VersionProperty('0.1.0')
+    version = VersionProperty("0.1.4")
     host = StringProperty(title='Host Address')
     tags = Property(title='Tags')
 
