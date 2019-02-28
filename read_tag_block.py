@@ -36,36 +36,31 @@ class ReadTag(EnrichSignals, Retry, Block):
         output_signals = []
         if self.cnxn is None:
             try:
-                msg = 'Connecting to {}'.format(host)
+                msg = 'Not connected to {}, reconnecting...'.format(host)
                 self.logger.warning(msg)
                 self._connect()
-            except Exception as exc:
+            except Exception:
                 self.cnxn = None
                 msg = 'Unable to connect to {}'.format(host)
-                self.logger.error(msg)
-                raise exc
+                self.logger.exception(msg)
+                return
         for signal in signals:
             tag = self.tags(signal)
             try:
                 value = self.execute_with_retry(self._make_request, tag)
-            except Exception as exc:
+            except Exception:
                 value = False
                 self.cnxn = None
                 msg = 'read_tag failed, host: {}, tag: {}'
-                self.logger.error(msg.format(host, tag))
-                raise exc
-            if value:
-                if not isinstance(value[0], tuple):
-                    # read_tag only includes the tag name in the return value
-                    # when reading a list of tags, so we include it here
-                    value = (tag, ) + value
-                new_signal_dict = {'host': host, 'value': value}
-                new_signal = self.get_output_signal(new_signal_dict, signal)
-                output_signals.append(new_signal)
-            else:
-                msg = 'read_tag failed, host: {}, tag: {}'
-                msg = msg.format(host, tag)
-                self.logger.error(msg)
+                self.logger.exception(msg.format(host, tag))
+                continue
+            if not isinstance(value[0], tuple):
+                # read_tag only includes the tag name in the return value
+                # when reading a list of tags, so we include it here
+                value = (tag, ) + value
+            new_signal_dict = {'host': host, 'value': value}
+            new_signal = self.get_output_signal(new_signal_dict, signal)
+            output_signals.append(new_signal)
                     
         self.notify_signals(output_signals)
 

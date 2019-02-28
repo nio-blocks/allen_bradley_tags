@@ -37,35 +37,30 @@ class WriteTag(EnrichSignals, Retry, Block):
         output_signals = []
         if self.cnxn is None:
             try:
-                msg = 'Connecting to {}'.format(host)
+                msg = 'Not connected to {}, reconnecting...'.format(host)
                 self.logger.warning(msg)
                 self._connect()
-            except Exception as exc:
+            except Exception:
                 self.cnxn = None
                 msg = 'Unable to connect to {}'.format(host)
-                self.logger.error(msg)
-                raise exc
+                self.logger.exception(msg)
+                return
         for signal in signals:
             tag_list = self.tags(signal)
             self._validate_tags(tag_list)
             try:
                 response = self.execute_with_retry(
                     self._make_request, tag_list)
-            except Exception as exc:
+            except Exception:
                 response = False
                 self.cnxn = None
-                msg = 'writetag failed, host: {}, tags: {}'
-                self.logger.error(msg.format(host, tag_list))
-                raise exc
-            if response:
-                new_signal_dict = self._parse_response(response)
-                new_signal_dict['host'] = host
-                new_signal = self.get_output_signal(new_signal_dict, signal)
-                output_signals.append(new_signal)
-            else:
-                msg = 'read_tag failed, host: {}, tags: {}'
-                msg = msg.format(host, tag_list)
-                self.logger.error(msg)
+                msg = 'write_tag failed, host: {}, tags: {}'
+                self.logger.exception(msg.format(host, tag_list))
+                continue
+            new_signal_dict = self._parse_response(response)
+            new_signal_dict['host'] = host
+            new_signal = self.get_output_signal(new_signal_dict, signal)
+            output_signals.append(new_signal)
         self.notify_signals(output_signals)
 
     def _abort(self):
