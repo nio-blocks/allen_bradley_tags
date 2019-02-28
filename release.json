@@ -1,12 +1,12 @@
 {
   "nio/ReadTag": {
     "language": "Python",
-    "url": "git://github.com/nio-blocks/allen_bradley_tags.git",
-    "version": "0.1.4"
+    "from_python": "read_tag_block.ReadTag",
+    "url": "git://github.com/nio-blocks/allen_bradley_tags.git"
   },
   "nio/WriteTag": {
     "language": "Python",
-    "url": "git://github.com/nio-blocks/allen_bradley_tags.git",
-    "version": "0.1.2"
+    "from_python": "write_tag_block.WriteTag",
+    "url": "git://github.com/nio-blocks/allen_bradley_tags.git"
   }
 }
