@@ -1,4 +1,4 @@
-ReadTag
+CLXReadTag
 =======
 Read tags from an Allen-Bradley ControlLogix or CompactLogix PLC.
 

@@ -5,11 +5,11 @@ from nio.block.mixins import EnrichSignals, Retry
 from nio.properties import VersionProperty, StringProperty, Property
 
 
-class WriteTag(EnrichSignals, Retry, Block):
+class CLXWriteTag(EnrichSignals, Retry, Block):
 
-    version = VersionProperty("0.1.2")
     host = StringProperty(title='Host Address')
     tags = Property(title='Tags')
+    version = VersionProperty('0.1.2')
 
     def __init__(self):
         super().__init__()

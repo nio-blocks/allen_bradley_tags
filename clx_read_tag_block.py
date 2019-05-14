@@ -4,7 +4,7 @@ from nio.block.mixins import EnrichSignals, Retry
 from nio.properties import VersionProperty, StringProperty, Property
 
 
-class ReadTag(EnrichSignals, Retry, Block):
+class CLXReadTag(EnrichSignals, Retry, Block):
 
     host = StringProperty(title='Host Address', order=0)
     tags = Property(title='Tags', order=1)
@@ -61,7 +61,7 @@ class ReadTag(EnrichSignals, Retry, Block):
             new_signal_dict = {'host': host, 'value': value}
             new_signal = self.get_output_signal(new_signal_dict, signal)
             output_signals.append(new_signal)
-                    
+
         self.notify_signals(output_signals)
 
     def _connect(self):
