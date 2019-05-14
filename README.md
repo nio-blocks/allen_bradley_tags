@@ -3,8 +3,8 @@ allen_bradley_tags
 
 Blocks in this Collection
 ---
-[ReadTag](docs/read_tag_block.md)
-[WriteTag](docs/write_tag_block.md)
+[CLXReadTag](docs/clx_read_tag_block.md)
+[CLXWriteTag](docs/clx_write_tag_block.md)
 
 Dependencies
 ---

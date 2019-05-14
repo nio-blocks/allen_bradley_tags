@@ -1,22 +1,22 @@
 {
-  "nio/ReadTag": {
+  "nio/CLXReadTag": {
     "description": "Read tags from an Allen-Bradley ControlLogix or CompactLogix PLC.",
     "categories": [
       "Hardware",
       "Communication"
     ],
     "tags": "ethernet allen bradley logix",
-    "from_readme": "docs/read_tag_block.md",
-    "from_python": "read_tag_block.ReadTag"
+    "from_readme": "docs/clx_read_tag_block.md",
+    "from_python": "clx_read_tag_block.CLXReadTag"
   },
-  "nio/WriteTag": {
+  "nio/CLXWriteTag": {
     "description": "Write tags to an Allen-Bradley ControlLogix or CompactLogix PLC.",
     "categories": [
       "Hardware",
       "Communication"
     ],
     "tags": "ethernet allen bradley logix",
-    "from_readme": "docs/write_tag_block.md",
-    "from_python": "write_tag_block.WriteTag"
+    "from_readme": "docs/clx_write_tag_block.md",
+    "from_python": "clx_write_tag_block.CLXWriteTag"
   }
 }

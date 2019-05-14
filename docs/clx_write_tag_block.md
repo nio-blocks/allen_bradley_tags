@@ -1,4 +1,4 @@
-WriteTag
+CLXWriteTag
 ========
 Write tags to an Allen-Bradley ControlLogix or CompactLogix PLC.
 
